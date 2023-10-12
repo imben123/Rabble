@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "resolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ctrlgroup/Resolver.git",
+      "state" : {
+        "branch" : "feature/moc-view-context-constant",
+        "revision" : "c50f9e7ddac7d847aea0ed87db29e3487b5a19e2"
+      }
+    }
+  ],
+  "version" : 2
+}
