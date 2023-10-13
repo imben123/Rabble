@@ -100,7 +100,7 @@ struct EventView: View {
             }
           }
           Spacer(minLength: 0)
-        }.onTapGesture { onSelect() }
+        }.background(Color(.systemBackground)).onTapGesture { onSelect() }
         if expanded {
           EventActionsView(event: event)
             .padding([.top, .leading], 4)
