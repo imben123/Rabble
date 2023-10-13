@@ -17,8 +17,6 @@ struct LoadEventsView: View {
       return errorMessage
     } else if repository.events == nil {
       return "Updating events..."
-    } else if repository.loadingEventPasses {
-      return "Loading event passes (\(repository.loadingEventPassesProgress) of \(repository.events?.count ?? 0))"
     }
     return nil
   }
@@ -31,7 +29,8 @@ struct LoadEventsView: View {
     }
     .task {
       do {
-        try await Repository.shared.fetchEvents()
+        errorMessage = nil
+        try await repository.updateEvents()
       } catch let error {
         errorMessage = error.localizedDescription
       }

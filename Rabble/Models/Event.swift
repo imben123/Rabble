@@ -8,6 +8,7 @@
 import Foundation
 import FoundationPlus
 import Time
+import CoreLocation
 
 struct EventRaw: Model {
   let EventID: String
@@ -21,6 +22,8 @@ struct EventRaw: Model {
   let Venue: String
   let Address: String?
   let Postcode: String?
+  let Lat: String?
+  let Lon: String?
   let utoeID: String // "0" means not enrolled, anything else means enrolled
 }
 
@@ -58,7 +61,12 @@ extension Event {
 
     self.attendees = .init(attendeesString: raw.Attendees)
 
-    self.venue = Venue(name: raw.Venue, address: raw.Address, postcode: raw.Postcode)
+    self.venue = Venue(
+      name: raw.Venue,
+      address: raw.Address,
+      postcode: raw.Postcode,
+      coords: CLLocationCoordinate2D(latitude: raw.Lat, longitude: raw.Lon)
+    )
 
     self.enrolled = (Int(raw.utoeID) ?? 0) > 0
   }

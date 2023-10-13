@@ -10,12 +10,11 @@ import FoundationPlus
 import Time
 
 final class Repository: ObservableObject {
-  static let shared = Repository()
 
-  private let api = RabbleAPI.shared
+  private let api: RabbleAPI
 
-  @UserDefaultsStored(key: "events")
-  var events: [Event]? = nil {
+  @UserDefaultsStored var lastFetchedEvents: Date?
+  @UserDefaultsStored var events: [Event]? {
     willSet {
       if newValue != events {
         self.objectWillChange.send()
@@ -25,15 +24,22 @@ final class Repository: ObservableObject {
 
   @Published var eventPasses: [String: EventPasses] = [:]
   @Published var loadingEventPasses = false
-  @Published var loadingEventPassesProgress = 0
 
-  private init() {}
+  init(api: RabbleAPI, keyValueStore: KeyValueStorage) {
+    self.api = api
+    self._lastFetchedEvents = UserDefaultsStored(defaultValue: nil, key: "lastFetchedEvents", keyValueStore: keyValueStore)
+    self._events = UserDefaultsStored(defaultValue: nil, key: "events", keyValueStore: keyValueStore)
+  }
+
+  convenience init(keyValueStore: KeyValueStorage) {
+    let api = RabbleAPI(userToken: keyValueStore.string(forKey: "userToken"))
+    self.init(api: api, keyValueStore: keyValueStore)
+  }
 
   convenience init(events: [Event], loadingEventPasses: Bool = false) {
-    self.init()
+    self.init(api: RabbleAPI(userToken: nil), keyValueStore: KeyValueStorageFake())
     self.events = events
     self.loadingEventPasses = loadingEventPasses
-    self.loadingEventPassesProgress = 10
   }
 }
 
@@ -43,25 +49,36 @@ extension Repository {
     return eventPasses[event.id] == nil && loadingEventPasses
   }
 
+  @MainActor func updateEvents() async throws {
+    guard lastFetchedEvents == nil || lastFetchedEvents! < Date(timeIntervalSinceNow: -300) else {
+      return // Recently fetched events
+    }
+    try await fetchEvents()
+    try await fetchEventPasses()
+  }
+
   @MainActor func fetchEvents() async throws {
     events = try await api.getEvents()
+  }
+
+  @MainActor func fetchEventPasses() async throws {
+    guard !loadingEventPasses else {
+      return
+    }
     loadingEventPasses = true
-    Task {
-      try await withThrowingTaskGroup(of: (String, EventPasses?).self) { group in
-        for event in events ?? [] {
-          group.addTask {
-            let result = try? await self.api.getEventPasses(event: event)
-            return (event.id, result)
-          }
-        }
-        
-        for try await (id, passes) in group where passes != nil {
-          loadingEventPassesProgress += 1
-          eventPasses[id] = passes
+    try await withThrowingTaskGroup(of: (String, EventPasses?).self) { group in
+      for event in events ?? [] {
+        group.addTask {
+          let result = try? await self.api.getEventPasses(event: event)
+          return (event.id, result)
         }
       }
-      loadingEventPasses = false
+
+      for try await (id, passes) in group where passes != nil {
+        eventPasses[id] = passes
+      }
     }
+    loadingEventPasses = false
   }
 
   func canBookEvent(event: Event) -> Bool {

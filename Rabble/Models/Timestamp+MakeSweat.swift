@@ -11,7 +11,7 @@ import Time
 extension Timestamp {
   private static let dateFormatter: DateFormatter = {
     let result = DateFormatter()
-    result.timeZone = .autoupdatingCurrent
+    result.timeZone = .utc
     result.dateFormat = "yyyy-MM-dd HH:mm:ss"
     return result
   }()

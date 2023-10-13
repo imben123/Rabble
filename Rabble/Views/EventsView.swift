@@ -64,7 +64,7 @@ struct EventView: View {
       VStack {
         ZStack {
           ForEach(leaders, id: \.element.id) { item in
-            image(for: item.element)
+            UserIcon(user: item.element)
               .offset(x: 20 * CGFloat(item.offset))
           }
         }
@@ -80,51 +80,36 @@ struct EventView: View {
         Spacer(minLength: 0)
       }.onTapGesture { onSelect() }
       VStack(alignment: .leading, spacing: 4) {
-        VStack(alignment: .leading, spacing: 4) {
-          HStack(alignment: .firstTextBaseline) {
-            Image(systemName: "calendar.circle")
-            Text(weekday).font(.headline)
+        HStack {
+          VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .firstTextBaseline) {
+              Image(systemName: "calendar.circle")
+              Text(weekday).font(.headline)
+            }
+            HStack(alignment: .firstTextBaseline) {
+              Image(systemName: "mappin.circle")
+              Text(event.venue.name).font(.subheadline)
+            }
+            HStack(alignment: .firstTextBaseline) {
+              Image(systemName: "person.circle")
+              Text(whoString)
+            }
+            HStack(alignment: .firstTextBaseline) {
+              Image(systemName: "clock")
+              Text(whenString)
+            }
           }
-          HStack(alignment: .firstTextBaseline) {
-            Image(systemName: "mappin.circle")
-            Text(event.venue.name).font(.subheadline)
-          }
-          HStack(alignment: .firstTextBaseline) {
-            Image(systemName: "person.circle")
-            Text(whoString)
-          }
-          HStack(alignment: .firstTextBaseline) {
-            Image(systemName: "clock")
-            Text(whenString)
-          }
+          Spacer(minLength: 0)
         }.onTapGesture { onSelect() }
         if expanded {
           EventActionsView(event: event)
             .padding([.top, .leading], 4)
         }
       }
-      Spacer(minLength: 0)
     }
     .grayscale(event.isInPast ? 1 : 0)
     .opacity(event.isInPast ? 0.6 : 1)
     .padding(.horizontal, 16)
-  }
-
-  @ViewBuilder
-  func image(for leader: Attendee) -> some View {
-    ZStack {
-      Circle()
-        .fill(Color.accentColor)
-        .frame(height: 65)
-      AsyncImage(url: leader.imageURL) {
-        image in image.resizable().aspectRatio(contentMode: .fill)
-      } placeholder: {
-        Color(.lightGray)
-      }
-      .frame(width: 60)
-      .clipShape(Circle())
-      .frame(height: 60)
-    }
   }
 }
 
@@ -135,12 +120,13 @@ struct EventActionsView: View {
   var body: some View {
     HStack(spacing: 16) {
       BookButton(event: event)
-      RoundedButton(action: {}) {
+      NavigationLink(destination: EventDetails(event: event)) {
         HStack(spacing: 2) {
           Text("View Details")
           Image(systemName: "chevron.right")
         }
       }
+      .buttonStyle(.roundedButtonStyle)
     }
     .padding(.vertical, 8)
   }

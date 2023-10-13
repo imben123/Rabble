@@ -18,6 +18,13 @@
 		B55963742AD83EDF00E611DA /* TimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963732AD83EDF00E611DA /* TimeZone.swift */; };
 		B55963762AD83EF200E611DA /* Timestamp+MakeSweat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963752AD83EF200E611DA /* Timestamp+MakeSweat.swift */; };
 		B55963782AD8456D00E611DA /* LoadEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963772AD8456D00E611DA /* LoadEventsView.swift */; };
+		B559637A2AD85E3200E611DA /* UserDefaults+Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963792AD85E3200E611DA /* UserDefaults+Accounts.swift */; };
+		B559637C2AD8606600E611DA /* AccountsWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559637B2AD8606600E611DA /* AccountsWrapperView.swift */; };
+		B559637E2AD8637F00E611DA /* AccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559637D2AD8637F00E611DA /* AccountsController.swift */; };
+		B55963802AD8639C00E611DA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559637F2AD8639C00E611DA /* User.swift */; };
+		B55963822AD866B400E611DA /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963812AD866B400E611DA /* UserIcon.swift */; };
+		B55963842AD8750E00E611DA /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963832AD8750E00E611DA /* EventDetails.swift */; };
+		B55963862AD9617300E611DA /* MapLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963852AD9617300E611DA /* MapLauncher.swift */; };
 		B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DD2AD58F6300A76900 /* RabbleApp.swift */; };
 		B5F486E02AD58F6300A76900 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DF2AD58F6300A76900 /* ContentView.swift */; };
 		B5F486E22AD58F6500A76900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F486E12AD58F6500A76900 /* Assets.xcassets */; };
@@ -45,6 +52,14 @@
 		B55963732AD83EDF00E611DA /* TimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZone.swift; sourceTree = "<group>"; };
 		B55963752AD83EF200E611DA /* Timestamp+MakeSweat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+MakeSweat.swift"; sourceTree = "<group>"; };
 		B55963772AD8456D00E611DA /* LoadEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadEventsView.swift; sourceTree = "<group>"; };
+		B55963792AD85E3200E611DA /* UserDefaults+Accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Accounts.swift"; sourceTree = "<group>"; };
+		B559637B2AD8606600E611DA /* AccountsWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsWrapperView.swift; sourceTree = "<group>"; };
+		B559637D2AD8637F00E611DA /* AccountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsController.swift; sourceTree = "<group>"; };
+		B559637F2AD8639C00E611DA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B55963812AD866B400E611DA /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
+		B55963832AD8750E00E611DA /* EventDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
+		B55963852AD9617300E611DA /* MapLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLauncher.swift; sourceTree = "<group>"; };
+		B55963872AD965B900E611DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B5F486DA2AD58F6300A76900 /* Rabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F486DD2AD58F6300A76900 /* RabbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleApp.swift; sourceTree = "<group>"; };
 		B5F486DF2AD58F6300A76900 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +99,7 @@
 				B55963712AD83ECC00E611DA /* Venue.swift */,
 				B55963732AD83EDF00E611DA /* TimeZone.swift */,
 				B55963752AD83EF200E611DA /* Timestamp+MakeSweat.swift */,
+				B559637F2AD8639C00E611DA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -93,6 +109,9 @@
 			children = (
 				B5F486EC2AD58F7500A76900 /* RabbleAPI.swift */,
 				B53D6D222AD70252003455AA /* Repository.swift */,
+				B55963792AD85E3200E611DA /* UserDefaults+Accounts.swift */,
+				B559637D2AD8637F00E611DA /* AccountsController.swift */,
+				B55963852AD9617300E611DA /* MapLauncher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -100,11 +119,14 @@
 		B559636C2AD82EE500E611DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B559637B2AD8606600E611DA /* AccountsWrapperView.swift */,
 				B55963772AD8456D00E611DA /* LoadEventsView.swift */,
 				B5F6FE472AD5A10300043BB0 /* EventsView.swift */,
 				B53D6D242AD705BA003455AA /* PasstypesView.swift */,
 				B5F6FE492AD6BAAD00043BB0 /* RoundedButtonStyle.swift */,
 				B559636D2AD82EFC00E611DA /* BookButton.swift */,
+				B55963812AD866B400E611DA /* UserIcon.swift */,
+				B55963832AD8750E00E611DA /* EventDetails.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +150,7 @@
 		B5F486DC2AD58F6300A76900 /* Rabble */ = {
 			isa = PBXGroup;
 			children = (
+				B55963872AD965B900E611DA /* Info.plist */,
 				B5F486DD2AD58F6300A76900 /* RabbleApp.swift */,
 				B5F486DF2AD58F6300A76900 /* ContentView.swift */,
 				B559636C2AD82EE500E611DA /* Views */,
@@ -231,23 +254,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B559637C2AD8606600E611DA /* AccountsWrapperView.swift in Sources */,
 				B53D6D212AD6FE38003455AA /* Currency.swift in Sources */,
 				B53D6D252AD705BA003455AA /* PasstypesView.swift in Sources */,
 				B5F486EF2AD590C000A76900 /* Event.swift in Sources */,
 				B55963722AD83ECC00E611DA /* Venue.swift in Sources */,
+				B55963842AD8750E00E611DA /* EventDetails.swift in Sources */,
 				B5F486E02AD58F6300A76900 /* ContentView.swift in Sources */,
 				B55963762AD83EF200E611DA /* Timestamp+MakeSweat.swift in Sources */,
 				B5F486ED2AD58F7500A76900 /* RabbleAPI.swift in Sources */,
 				B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */,
 				B5F6FE442AD5A05800043BB0 /* ExampleData.swift in Sources */,
 				B55963782AD8456D00E611DA /* LoadEventsView.swift in Sources */,
+				B55963822AD866B400E611DA /* UserIcon.swift in Sources */,
 				B53D6D1F2AD6FBA0003455AA /* EventPasses.swift in Sources */,
 				B53D6D232AD70252003455AA /* Repository.swift in Sources */,
 				B55963702AD83EB800E611DA /* Attendee.swift in Sources */,
 				B5F6FE482AD5A10300043BB0 /* EventsView.swift in Sources */,
 				B55963742AD83EDF00E611DA /* TimeZone.swift in Sources */,
 				B559636E2AD82EFC00E611DA /* BookButton.swift in Sources */,
+				B559637A2AD85E3200E611DA /* UserDefaults+Accounts.swift in Sources */,
+				B55963862AD9617300E611DA /* MapLauncher.swift in Sources */,
 				B5F6FE4A2AD6BAAD00043BB0 /* RoundedButtonStyle.swift in Sources */,
+				B559637E2AD8637F00E611DA /* AccountsController.swift in Sources */,
+				B55963802AD8639C00E611DA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +411,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rabble/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -419,6 +450,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rabble/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -17,7 +17,7 @@ struct RabbleApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(Repository.shared)
+        .environmentObject(Repository(api: RabbleAPI(userToken: nil), keyValueStore: UserDefaults.defaultsForAccount(accountID: "12345")))
     }
   }
 }
