@@ -84,6 +84,7 @@ struct EventDetails: View {
               .background(Color.rabbleOrange)
               .clipShape(RoundedRectangle(cornerRadius: 5))
               .foregroundColor(.white)
+              .padding(.top, 2)
           }
         }
         Spacer(minLength: 0)
@@ -200,6 +201,6 @@ extension View {
 
 #Preview {
   NavigationView {
-    EventDetails(event: Event.examples[3])
+    EventDetails(event: Event.examples[1])
   }
 }
