@@ -88,7 +88,7 @@ struct EventView: View {
             }
             HStack(alignment: .firstTextBaseline) {
               Image(systemName: "mappin.circle")
-              Text(event.venue.name).font(.subheadline)
+              Text(event.venue.name)
             }
             HStack(alignment: .firstTextBaseline) {
               Image(systemName: "person.circle")
