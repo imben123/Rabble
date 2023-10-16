@@ -49,19 +49,27 @@ extension Repository {
     return eventPasses[event.id] == nil && loadingEventPasses
   }
 
+  @MainActor func reloadEvent(event: Event) async throws -> Event {
+    try await fetchEvents()
+    return events?.first(where: { $0.id == event.id }) ?? event
+  }
+
   @MainActor func updateEvents() async throws {
     guard lastFetchedEvents == nil || lastFetchedEvents! < Date(timeIntervalSinceNow: -300) else {
       return // Recently fetched events
     }
     try await fetchEvents()
-    try await fetchEventPasses()
+    Task {
+      try await fetchEventPasses()
+    }
   }
 
-  @MainActor func fetchEvents() async throws {
+  @MainActor private func fetchEvents() async throws {
     events = try await api.getEvents()
+    lastFetchedEvents = .now
   }
 
-  @MainActor func fetchEventPasses() async throws {
+  @MainActor private func fetchEventPasses() async throws {
     guard !loadingEventPasses else {
       return
     }

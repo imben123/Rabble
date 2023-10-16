@@ -42,6 +42,8 @@ struct Event: Model {
 
   var enrolled: Bool
 
+  let updatedAt: Timestamp
+
   var leaders: [Attendee] {
     attendees.filter(\.isLeader)
   }
@@ -69,6 +71,8 @@ extension Event {
     )
 
     self.enrolled = (Int(raw.utoeID) ?? 0) > 0
+
+    self.updatedAt = Timestamp.now
   }
 }
 
@@ -89,7 +93,8 @@ extension Event {
       numberOfAttendees: Int(raw.numattendees) ?? 0,
       attendees: .init(attendeesString: raw.Attendees),
       venue: venue,
-      enrolled: (Int(raw.utoeID) ?? 0) > 0
+      enrolled: (Int(raw.utoeID) ?? 0) > 0, 
+      updatedAt: updatedAt
     )
   }
 }

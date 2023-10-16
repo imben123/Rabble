@@ -10,11 +10,11 @@ import MapKit
 
 struct EventDetails: View {
   
-  let event: Event
+  @State private var event: Event
   let region: MKCoordinateRegion?
 
   init(event: Event) {
-    self.event = event
+    self._event = State(initialValue: event)
     if let coords = event.venue.coords {
       self.region = MKCoordinateRegion(
         center: coords,
@@ -176,11 +176,22 @@ struct EventDetails: View {
         }
       }.padding(.leading, 28)
 
+      HStack {
+        Spacer()
+        Text("Last updated: \(event.updatedAt.makeSweatString)")
+          .font(.footnote)
+          .foregroundColor(Color(.lightGray))
+        Spacer()
+      }.padding(.top, 26)
+
       Spacer()
     }
     .padding(.horizontal, 20)
     .padding(.top, 12)
     .navigationTitle(title)
+    .toolbar {
+      RefreshEventsButton(event: $event)
+    }
   }
 
   private func launchMap(_ app: MapApp) {

@@ -12,6 +12,7 @@
 		B53D6D232AD70252003455AA /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D6D222AD70252003455AA /* Repository.swift */; };
 		B53D6D252AD705BA003455AA /* PasstypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D6D242AD705BA003455AA /* PasstypesView.swift */; };
 		B53D6D272AD705EB003455AA /* example-passtypes.json in Resources */ = {isa = PBXBuildFile; fileRef = B53D6D262AD705EB003455AA /* example-passtypes.json */; };
+		B54B3C452ADD65A200681F95 /* RefreshEventsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */; };
 		B559636E2AD82EFC00E611DA /* BookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559636D2AD82EFC00E611DA /* BookButton.swift */; };
 		B55963702AD83EB800E611DA /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559636F2AD83EB800E611DA /* Attendee.swift */; };
 		B55963722AD83ECC00E611DA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963712AD83ECC00E611DA /* Venue.swift */; };
@@ -46,6 +47,7 @@
 		B53D6D222AD70252003455AA /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B53D6D242AD705BA003455AA /* PasstypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasstypesView.swift; sourceTree = "<group>"; };
 		B53D6D262AD705EB003455AA /* example-passtypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "example-passtypes.json"; sourceTree = "<group>"; };
+		B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshEventsButton.swift; sourceTree = "<group>"; };
 		B559636D2AD82EFC00E611DA /* BookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookButton.swift; sourceTree = "<group>"; };
 		B559636F2AD83EB800E611DA /* Attendee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
 		B55963712AD83ECC00E611DA /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				B559636D2AD82EFC00E611DA /* BookButton.swift */,
 				B55963812AD866B400E611DA /* UserIcon.swift */,
 				B55963832AD8750E00E611DA /* EventDetails.swift */,
+				B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B559637C2AD8606600E611DA /* AccountsWrapperView.swift in Sources */,
+				B54B3C452ADD65A200681F95 /* RefreshEventsButton.swift in Sources */,
 				B53D6D212AD6FE38003455AA /* Currency.swift in Sources */,
 				B53D6D252AD705BA003455AA /* PasstypesView.swift in Sources */,
 				B5F486EF2AD590C000A76900 /* Event.swift in Sources */,
@@ -412,6 +416,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Rabble/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Rabble;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -451,6 +456,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Rabble/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Rabble;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
