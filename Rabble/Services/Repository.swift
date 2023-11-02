@@ -55,10 +55,9 @@ extension Repository {
   }
 
   @MainActor func updateEvents() async throws {
-    guard lastFetchedEvents == nil || lastFetchedEvents! < Date(timeIntervalSinceNow: -300) else {
-      return // Recently fetched events
+    if lastFetchedEvents == nil || lastFetchedEvents! < Date(timeIntervalSinceNow: -300) {
+      try await fetchEvents()
     }
-    try await fetchEvents()
     Task {
       try await fetchEventPasses()
     }

@@ -69,13 +69,7 @@ struct EventView: View {
           }
         }
         if event.enrolled {
-          Text("Booked")
-            .font(.caption)
-            .padding(.horizontal, 4)
-            .padding(.vertical, 2)
-            .background(Color.rabbleOrange)
-            .clipShape(RoundedRectangle(cornerRadius: 5))
-            .foregroundColor(.white)
+          BookedBadge()
         }
         Spacer(minLength: 0)
       }.onTapGesture { onSelect() }
@@ -100,7 +94,9 @@ struct EventView: View {
             }
           }
           Spacer(minLength: 0)
-        }.background(Color(.systemBackground)).onTapGesture { onSelect() }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture { onSelect() }
         if expanded {
           EventActionsView(event: event)
             .padding([.top, .leading], 4)
@@ -115,12 +111,16 @@ struct EventView: View {
 
 struct EventActionsView: View {
 
+  @EnvironmentObject private var repository: Repository
+
   let event: Event
 
   var body: some View {
     HStack(spacing: 16) {
       BookButton(event: event)
-      NavigationLink(destination: EventDetails(event: event)) {
+      NavigationLink(
+        destination: EventDetails(event: event).environmentObject(repository)
+      ) {
         HStack(spacing: 2) {
           Text("View Details")
           Image(systemName: "chevron.right")

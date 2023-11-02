@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NukeUI
 
 protocol UserType {
   var initials: String { get }
@@ -32,6 +33,7 @@ extension User: UserType {
     }
   }
 }
+
 extension Attendee: UserType {
   var initials: String {
     let components = name.split(separator: " ")
@@ -50,25 +52,33 @@ struct UserIcon: View {
   var size: CGFloat = 65
   var body: some View {
     if let imageURL = user.imageURL {
-      UserImageIcon(url: imageURL, size: size)
+      UserImageIcon(url: imageURL, size: size) {
+        UserInitialIcon(name: user.initials, size: size)
+      }
     } else {
       UserInitialIcon(name: user.initials, size: size)
     }
   }
 }
 
-struct UserImageIcon: View {
+struct UserImageIcon<ErrorView: View>: View {
   let url: URL?
   var size: CGFloat = 65
+  let errorView: () -> ErrorView
+
   var body: some View {
     ZStack {
       Circle()
         .fill(Color.accentColor)
         .frame(height: size)
-      AsyncImage(url: url) {
-        image in image.resizable().aspectRatio(contentMode: .fill)
-      } placeholder: {
-        Color(.lightGray)
+      LazyImage(url: url) { state in
+        if let image = state.image {
+          image.resizable().aspectRatio(contentMode: .fill)
+        } else if state.error != nil {
+          errorView()
+        } else {
+          Color(.lightGray) // Acts as a placeholder
+        }
       }
       .frame(width: size * (60/65))
       .clipShape(Circle())

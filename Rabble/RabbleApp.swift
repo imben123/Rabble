@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import Nuke
 
 @main
 struct RabbleApp: App {
 
   init() {
     print("Setting up app...")
+    ImagePipeline.shared = ImagePipeline(configuration: .withDataCache)
   }
 
   var body: some Scene {
     WindowGroup {
       ContentView()
-        .environmentObject(Repository(api: RabbleAPI(userToken: nil), keyValueStore: UserDefaults.defaultsForAccount(accountID: "12345")))
     }
   }
 }

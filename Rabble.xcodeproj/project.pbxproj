@@ -13,6 +13,13 @@
 		B53D6D252AD705BA003455AA /* PasstypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D6D242AD705BA003455AA /* PasstypesView.swift */; };
 		B53D6D272AD705EB003455AA /* example-passtypes.json in Resources */ = {isa = PBXBuildFile; fileRef = B53D6D262AD705EB003455AA /* example-passtypes.json */; };
 		B54B3C452ADD65A200681F95 /* RefreshEventsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */; };
+		B54B3C4A2ADD98CD00681F95 /* Timestamp+UpdatedAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C492ADD98CD00681F95 /* Timestamp+UpdatedAt.swift */; };
+		B54B3C4D2ADD98EF00681F95 /* EventLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C4C2ADD98EF00681F95 /* EventLocationView.swift */; };
+		B54B3C4F2ADD9A6B00681F95 /* BookedBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C4E2ADD9A6B00681F95 /* BookedBadge.swift */; };
+		B54B3C512ADD9A9E00681F95 /* EventAttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C502ADD9A9E00681F95 /* EventAttendeesView.swift */; };
+		B54B3C562ADD9D4E00681F95 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = B54B3C552ADD9D4E00681F95 /* Nuke */; };
+		B54B3C582ADD9D4E00681F95 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = B54B3C572ADD9D4E00681F95 /* NukeUI */; };
+		B54B3C5A2ADE953C00681F95 /* Color+SystemBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B3C592ADE953C00681F95 /* Color+SystemBackground.swift */; };
 		B559636E2AD82EFC00E611DA /* BookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559636D2AD82EFC00E611DA /* BookButton.swift */; };
 		B55963702AD83EB800E611DA /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B559636F2AD83EB800E611DA /* Attendee.swift */; };
 		B55963722AD83ECC00E611DA /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963712AD83ECC00E611DA /* Venue.swift */; };
@@ -26,6 +33,7 @@
 		B55963822AD866B400E611DA /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963812AD866B400E611DA /* UserIcon.swift */; };
 		B55963842AD8750E00E611DA /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963832AD8750E00E611DA /* EventDetails.swift */; };
 		B55963862AD9617300E611DA /* MapLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963852AD9617300E611DA /* MapLauncher.swift */; };
+		B58504B42ADEEE2700D694A5 /* EventEnrolmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */; };
 		B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DD2AD58F6300A76900 /* RabbleApp.swift */; };
 		B5F486E02AD58F6300A76900 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DF2AD58F6300A76900 /* ContentView.swift */; };
 		B5F486E22AD58F6500A76900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F486E12AD58F6500A76900 /* Assets.xcassets */; };
@@ -48,6 +56,11 @@
 		B53D6D242AD705BA003455AA /* PasstypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasstypesView.swift; sourceTree = "<group>"; };
 		B53D6D262AD705EB003455AA /* example-passtypes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "example-passtypes.json"; sourceTree = "<group>"; };
 		B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshEventsButton.swift; sourceTree = "<group>"; };
+		B54B3C492ADD98CD00681F95 /* Timestamp+UpdatedAt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timestamp+UpdatedAt.swift"; sourceTree = "<group>"; };
+		B54B3C4C2ADD98EF00681F95 /* EventLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationView.swift; sourceTree = "<group>"; };
+		B54B3C4E2ADD9A6B00681F95 /* BookedBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedBadge.swift; sourceTree = "<group>"; };
+		B54B3C502ADD9A9E00681F95 /* EventAttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAttendeesView.swift; sourceTree = "<group>"; };
+		B54B3C592ADE953C00681F95 /* Color+SystemBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SystemBackground.swift"; sourceTree = "<group>"; };
 		B559636D2AD82EFC00E611DA /* BookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookButton.swift; sourceTree = "<group>"; };
 		B559636F2AD83EB800E611DA /* Attendee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
 		B55963712AD83ECC00E611DA /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -62,6 +75,7 @@
 		B55963832AD8750E00E611DA /* EventDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
 		B55963852AD9617300E611DA /* MapLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLauncher.swift; sourceTree = "<group>"; };
 		B55963872AD965B900E611DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEnrolmentView.swift; sourceTree = "<group>"; };
 		B5F486DA2AD58F6300A76900 /* Rabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F486DD2AD58F6300A76900 /* RabbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleApp.swift; sourceTree = "<group>"; };
 		B5F486DF2AD58F6300A76900 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,15 +95,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54B3C582ADD9D4E00681F95 /* NukeUI in Frameworks */,
 				B5F6FE422AD597E900043BB0 /* FoundationPlus in Frameworks */,
 				B5F486F42AD5913400A76900 /* FoundationPlus in Frameworks */,
 				B5F486F72AD593CA00A76900 /* Time in Frameworks */,
+				B54B3C562ADD9D4E00681F95 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B54B3C482ADD98A900681F95 /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				B559636D2AD82EFC00E611DA /* BookButton.swift */,
+				B5F6FE492AD6BAAD00043BB0 /* RoundedButtonStyle.swift */,
+				B55963812AD866B400E611DA /* UserIcon.swift */,
+				B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */,
+				B54B3C4E2ADD9A6B00681F95 /* BookedBadge.swift */,
+				B54B3C592ADE953C00681F95 /* Color+SystemBackground.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
+		B54B3C4B2ADD98E100681F95 /* Event Details */ = {
+			isa = PBXGroup;
+			children = (
+				B55963832AD8750E00E611DA /* EventDetails.swift */,
+				B54B3C4C2ADD98EF00681F95 /* EventLocationView.swift */,
+				B54B3C502ADD9A9E00681F95 /* EventAttendeesView.swift */,
+				B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */,
+			);
+			path = "Event Details";
+			sourceTree = "<group>";
+		};
 		B559636A2AD82ECC00E611DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +154,7 @@
 				B55963792AD85E3200E611DA /* UserDefaults+Accounts.swift */,
 				B559637D2AD8637F00E611DA /* AccountsController.swift */,
 				B55963852AD9617300E611DA /* MapLauncher.swift */,
+				B54B3C492ADD98CD00681F95 /* Timestamp+UpdatedAt.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -125,11 +166,8 @@
 				B55963772AD8456D00E611DA /* LoadEventsView.swift */,
 				B5F6FE472AD5A10300043BB0 /* EventsView.swift */,
 				B53D6D242AD705BA003455AA /* PasstypesView.swift */,
-				B5F6FE492AD6BAAD00043BB0 /* RoundedButtonStyle.swift */,
-				B559636D2AD82EFC00E611DA /* BookButton.swift */,
-				B55963812AD866B400E611DA /* UserIcon.swift */,
-				B55963832AD8750E00E611DA /* EventDetails.swift */,
-				B54B3C442ADD65A200681F95 /* RefreshEventsButton.swift */,
+				B54B3C4B2ADD98E100681F95 /* Event Details */,
+				B54B3C482ADD98A900681F95 /* Helper Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +234,8 @@
 				B5F486F32AD5913400A76900 /* FoundationPlus */,
 				B5F486F62AD593CA00A76900 /* Time */,
 				B5F6FE412AD597E900043BB0 /* FoundationPlus */,
+				B54B3C552ADD9D4E00681F95 /* Nuke */,
+				B54B3C572ADD9D4E00681F95 /* NukeUI */,
 			);
 			productName = BookRabble;
 			productReference = B5F486DA2AD58F6300A76900 /* Rabble.app */;
@@ -228,6 +268,7 @@
 			packageReferences = (
 				B5F486F52AD593CA00A76900 /* XCLocalSwiftPackageReference "../Time" */,
 				B5F6FE402AD597E900043BB0 /* XCLocalSwiftPackageReference "../multiplayer-poker/FoundationPlus" */,
+				B54B3C542ADD9D4E00681F95 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = B5F486DB2AD58F6300A76900 /* Products */;
 			projectDirPath = "";
@@ -259,6 +300,8 @@
 			files = (
 				B559637C2AD8606600E611DA /* AccountsWrapperView.swift in Sources */,
 				B54B3C452ADD65A200681F95 /* RefreshEventsButton.swift in Sources */,
+				B54B3C4D2ADD98EF00681F95 /* EventLocationView.swift in Sources */,
+				B54B3C4F2ADD9A6B00681F95 /* BookedBadge.swift in Sources */,
 				B53D6D212AD6FE38003455AA /* Currency.swift in Sources */,
 				B53D6D252AD705BA003455AA /* PasstypesView.swift in Sources */,
 				B5F486EF2AD590C000A76900 /* Event.swift in Sources */,
@@ -268,8 +311,10 @@
 				B55963762AD83EF200E611DA /* Timestamp+MakeSweat.swift in Sources */,
 				B5F486ED2AD58F7500A76900 /* RabbleAPI.swift in Sources */,
 				B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */,
+				B54B3C4A2ADD98CD00681F95 /* Timestamp+UpdatedAt.swift in Sources */,
 				B5F6FE442AD5A05800043BB0 /* ExampleData.swift in Sources */,
 				B55963782AD8456D00E611DA /* LoadEventsView.swift in Sources */,
+				B54B3C512ADD9A9E00681F95 /* EventAttendeesView.swift in Sources */,
 				B55963822AD866B400E611DA /* UserIcon.swift in Sources */,
 				B53D6D1F2AD6FBA0003455AA /* EventPasses.swift in Sources */,
 				B53D6D232AD70252003455AA /* Repository.swift in Sources */,
@@ -277,8 +322,10 @@
 				B5F6FE482AD5A10300043BB0 /* EventsView.swift in Sources */,
 				B55963742AD83EDF00E611DA /* TimeZone.swift in Sources */,
 				B559636E2AD82EFC00E611DA /* BookButton.swift in Sources */,
+				B58504B42ADEEE2700D694A5 /* EventEnrolmentView.swift in Sources */,
 				B559637A2AD85E3200E611DA /* UserDefaults+Accounts.swift in Sources */,
 				B55963862AD9617300E611DA /* MapLauncher.swift in Sources */,
+				B54B3C5A2ADE953C00681F95 /* Color+SystemBackground.swift in Sources */,
 				B5F6FE4A2AD6BAAD00043BB0 /* RoundedButtonStyle.swift in Sources */,
 				B559637E2AD8637F00E611DA /* AccountsController.swift in Sources */,
 				B55963802AD8639C00E611DA /* User.swift in Sources */,
@@ -516,7 +563,28 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B54B3C542ADD9D4E00681F95 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		B54B3C552ADD9D4E00681F95 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B54B3C542ADD9D4E00681F95 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		B54B3C572ADD9D4E00681F95 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B54B3C542ADD9D4E00681F95 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
 		B5F486F32AD5913400A76900 /* FoundationPlus */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FoundationPlus;

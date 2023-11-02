@@ -21,13 +21,13 @@ struct AccountsWrapperView: View {
   }
 
   var body: some View {
-    NavigationView {
+    NavigationStack {
       LoadEventsView()
         .id(currentAccount)
-        .navigationBarTitleDisplayMode(.inline)
+        .navBarTitleDisplayMode(.inline)
         .toolbar {
           if let currentAccount {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .placementForUserSwitcher) {
               Menu(content: {
                 ForEach(AccountsController.shared.users, id: \.id) { user in
                   Button(action: { self.currentAccount = user }) {
@@ -45,5 +45,29 @@ struct AccountsWrapperView: View {
         }
         .environmentObject(repository!)
     }
+  }
+}
+
+enum NavigationBarItemTitleDisplayMode {
+  case inline
+}
+
+extension ToolbarItemPlacement {
+  static var placementForUserSwitcher: ToolbarItemPlacement {
+#if os(macOS)
+    return ToolbarItemPlacement.automatic
+#else
+    return .topBarLeading
+#endif
+  }
+}	
+
+extension View {
+  func navBarTitleDisplayMode(_ mode: NavigationBarItemTitleDisplayMode) -> some View {
+#if os(macOS)
+    self
+#else
+    self.navigationBarTitleDisplayMode(NavigationBarItem.TitleDisplayMode.inline)
+#endif
   }
 }

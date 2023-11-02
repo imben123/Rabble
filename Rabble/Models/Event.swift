@@ -65,8 +65,8 @@ extension Event {
 
     self.venue = Venue(
       name: raw.Venue,
-      address: raw.Address,
-      postcode: raw.Postcode,
+      address: raw.Address != "" ? raw.Address : nil,
+      postcode: raw.Postcode != "" ? raw.Postcode : nil,
       coords: CLLocationCoordinate2D(latitude: raw.Lat, longitude: raw.Lon)
     )
 

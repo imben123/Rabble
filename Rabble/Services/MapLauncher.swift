@@ -5,7 +5,11 @@
 //  Created by Ben Davis on 13/10/2023.
 //
 
+#if canImport(UIKit)
 import UIKit
+#else
+import AppKit
+#endif
 import FoundationPlus
 import MapKit
 import Contacts
@@ -37,24 +41,12 @@ struct MapLauncher {
       return false
     }
 
+#if canImport(UIKit)
     return UIApplication.shared.canOpenURL(URL(string: urlPrefix)!)
+#else
+    return false
+#endif
   }
-
-//  + (NSString *)googleMapsStringForMapPoint:(CMMapPoint *)mapPoint {
-//      if (!mapPoint) {
-//          return @"";
-//      }
-//
-//      if (mapPoint.isCurrentLocation && mapPoint.coordinate.latitude == 0.0 && mapPoint.coordinate.longitude == 0.0) {
-//          return @"";
-//      }
-//
-//      if (mapPoint.name) {
-//          return [NSString stringWithFormat:@"%f,%f+(%@)", mapPoint.coordinate.latitude, mapPoint.coordinate.longitude, [CMMapLauncher urlEncode:mapPoint.name]];
-//      }
-//
-//      return [NSString stringWithFormat:@"%f,%f", mapPoint.coordinate.latitude, mapPoint.coordinate.longitude];
-//  }
 
   static func launch(mapApp: MapApp, withVenue venue: Venue) {
     if !MapLauncher.isMapAppInstalled(mapApp) {
@@ -76,7 +68,7 @@ struct MapLauncher {
         return
       }
       let url = "https://www.google.com/maps/search/?api=1&query=\(coords.latitude)%2C\(coords.longitude)"
-      UIApplication.shared.open(URL(string: url)!)
+      open(URL(string: url)!)
 
     case .citymapper:
       var urlComponents = URLComponents(string: "citymapper://directions")!
@@ -89,7 +81,7 @@ struct MapLauncher {
         urlComponents.queryItems?.append(URLQueryItem(name: "endaddress", value: fullAddressString))
       }
       if let url = urlComponents.url {
-        UIApplication.shared.open(url)
+        open(url)
       }
       
     case .waze:
@@ -99,8 +91,16 @@ struct MapLauncher {
       var urlComponents = URLComponents(string: "waze://")!
       urlComponents.queryItems = [URLQueryItem(name: "ll", value: "\(coords.latitude),\(coords.longitude)")]
       if let url = urlComponents.url {
-        UIApplication.shared.open(url)
+        open(url)
       }
     }
+  }
+
+  static func open(_ url: URL) {
+#if canImport(UIKit)
+    UIApplication.shared.open(url)
+#else
+    NSWorkspace.shared.open(url)
+#endif
   }
 }
