@@ -62,10 +62,10 @@ struct EventView: View {
   var body: some View {
     HStack(alignment: .top) {
       VStack {
-        ZStack {
-          ForEach(leaders, id: \.element.id) { item in
+        ZStack(alignment: .top) {
+          ForEach(leaders.reversed(), id: \.element.id) { item in
             UserIcon(user: item.element)
-              .offset(x: 20 * CGFloat(item.offset))
+              .padding(.top, 20 * CGFloat(leaders.count - item.offset - 1))
           }
         }
         if event.enrolled {

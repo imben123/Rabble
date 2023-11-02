@@ -34,6 +34,7 @@
 		B55963842AD8750E00E611DA /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963832AD8750E00E611DA /* EventDetails.swift */; };
 		B55963862AD9617300E611DA /* MapLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963852AD9617300E611DA /* MapLauncher.swift */; };
 		B58504B42ADEEE2700D694A5 /* EventEnrolmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */; };
+		B5CDD0D62AF429E600AABFAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDD0D52AF429E600AABFAC /* LoginView.swift */; };
 		B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DD2AD58F6300A76900 /* RabbleApp.swift */; };
 		B5F486E02AD58F6300A76900 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DF2AD58F6300A76900 /* ContentView.swift */; };
 		B5F486E22AD58F6500A76900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F486E12AD58F6500A76900 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		B55963852AD9617300E611DA /* MapLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLauncher.swift; sourceTree = "<group>"; };
 		B55963872AD965B900E611DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEnrolmentView.swift; sourceTree = "<group>"; };
+		B5CDD0D52AF429E600AABFAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B5F486DA2AD58F6300A76900 /* Rabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F486DD2AD58F6300A76900 /* RabbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleApp.swift; sourceTree = "<group>"; };
 		B5F486DF2AD58F6300A76900 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				B55963772AD8456D00E611DA /* LoadEventsView.swift */,
 				B5F6FE472AD5A10300043BB0 /* EventsView.swift */,
 				B53D6D242AD705BA003455AA /* PasstypesView.swift */,
+				B5CDD0D52AF429E600AABFAC /* LoginView.swift */,
 				B54B3C4B2ADD98E100681F95 /* Event Details */,
 				B54B3C482ADD98A900681F95 /* Helper Views */,
 			);
@@ -328,6 +331,7 @@
 				B54B3C5A2ADE953C00681F95 /* Color+SystemBackground.swift in Sources */,
 				B5F6FE4A2AD6BAAD00043BB0 /* RoundedButtonStyle.swift in Sources */,
 				B559637E2AD8637F00E611DA /* AccountsController.swift in Sources */,
+				B5CDD0D62AF429E600AABFAC /* LoginView.swift in Sources */,
 				B55963802AD8639C00E611DA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

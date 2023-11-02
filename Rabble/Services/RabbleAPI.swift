@@ -14,9 +14,7 @@ final class RabbleAPI {
   private let baseURL = URL(string: "https://makesweat.com")!
   var userToken: String?
 
-//  static let shared = RabbleAPI(userToken: "8348cd741a06a04777db3ed205e092a72a5c36e451e32d01f1c4ad8406a6e8ce")
-
-  init(userToken: String?) {
+  init(userToken: String? = nil) {
     self.userToken = userToken
   }
 
@@ -24,6 +22,16 @@ final class RabbleAPI {
     let session = URLSession(configuration: .default)
     return session
   }()
+
+  func login(email: String, password: String) async throws -> UserRaw {
+    var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
+    urlComponents.path = "/service/user_m.php"
+    var request = URLRequest(url: urlComponents.url!)
+    request.httpMethod = "POST"
+    request.httpBody = "emaillogin=\(email)&passwordlogin=\(password)".data(using: .utf8)!
+    let (data, _) = try await URLSession.shared.data(for: request)
+    return try JSONDecoder().decode(UserRaw.self, from: data)
+  }
 
   func getEvents() async throws -> [Event] {
     let fromDate = (CalendarDate.today - 1).makeSweatString

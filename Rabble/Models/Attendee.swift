@@ -21,7 +21,7 @@ struct Attendee: Model {
     guard id != "" else {
       return nil
     }
-    return URL(string: "https://makesweat.com/userfiles/filethumbs/\(id)_64.jpg")
+    return URL(string: "https://makesweat.com/userfiles/filethumbs/\(id)_256.jpg")
   }
 }
 

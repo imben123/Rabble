@@ -41,10 +41,10 @@ struct EventDetails: View {
     ScrollView {
       VStack(alignment: .leading) {
         HStack(spacing: 20) {
-          ZStack {
-            ForEach(leaders, id: \.element.id) { item in
-              UserIcon(user: item.element, size: 100)
-                .offset(x: 20 * CGFloat(item.offset))
+          ZStack(alignment: .top) {
+            ForEach(leaders.reversed(), id: \.element.id) { item in
+              UserIcon(user: item.element, size: leaders.count == 1 ? 100 : 65)
+                .padding(.top, 20 * CGFloat(leaders.count - item.offset - 1))
             }
           }
           VStack(alignment: .leading, spacing: 4) {

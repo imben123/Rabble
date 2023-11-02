@@ -10,5 +10,6 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     AccountsWrapperView()
+      .environmentObject(AccountsController.shared)
   }
 }

@@ -8,9 +8,27 @@
 import Foundation
 import FoundationPlus
 
-final class AccountsController {
+final class AccountsController: ObservableObject {
+  
   static let shared = AccountsController()
 
   @UserDefaultsStored(key: "users")
-  var users: [User] = User.examples
+  var users: [User] = [] {
+    willSet {
+      self.objectWillChange.send()
+    }
+  }
+
+  func login(email: String, password: String) async throws {
+    let api = RabbleAPI()
+    let userRaw = try await api.login(email: email, password: password)
+    let user = User(raw: userRaw)
+    await MainActor.run {
+      if let existingIndex = users.firstIndex(where: { $0.id == user.id }) {
+        users[existingIndex] = user
+      } else {
+        users.append(user)
+      }
+    }
+  }
 }
