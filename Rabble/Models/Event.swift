@@ -11,6 +11,7 @@ import Time
 import CoreLocation
 
 struct EventRaw: Model {
+  let Title: String?
   let EventID: String
   var StartTime: String
   var EndTime: String
@@ -29,6 +30,7 @@ struct EventRaw: Model {
 
 struct Event: Model {
   let id: String
+  let title: String?
   let startTimestamp: Timestamp
   let endTimestamp: Timestamp
   let notes: String?
@@ -56,6 +58,7 @@ struct Event: Model {
 extension Event {
   init(raw: EventRaw) throws {
     self.id = raw.EventID
+    self.title = raw.Title
     let timeZoneString = raw.tz.replacingOccurrences(of: "\\/", with: "/")
     let timeZone = TimeZone(identifier: timeZoneString) ?? .europeLondon
     self.startTimestamp = try Timestamp(makeSweatString: raw.StartTime, timeZone: timeZone)
@@ -90,6 +93,7 @@ extension Event {
   func eventByUpdating(withRaw raw: EventRaw) -> Event {
     return Event(
       id: id,
+      title: title,
       startTimestamp: startTimestamp,
       endTimestamp: endTimestamp,
       notes: notes,

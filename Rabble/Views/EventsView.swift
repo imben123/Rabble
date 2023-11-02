@@ -76,6 +76,12 @@ struct EventView: View {
       VStack(alignment: .leading, spacing: 4) {
         HStack {
           VStack(alignment: .leading, spacing: 4) {
+            if let title = event.title, title != "Rabble Games" {
+              HStack(alignment: .firstTextBaseline) {
+                Image(systemName: "star.circle")
+                Text(title).font(.headline)
+              }.foregroundColor(.accentColor)
+            }
             HStack(alignment: .firstTextBaseline) {
               Image(systemName: "calendar.circle")
               Text(weekday).font(.headline)

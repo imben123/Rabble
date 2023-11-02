@@ -16,6 +16,9 @@ struct EventDetails: View {
   }
 
   private var title: String {
+    if let title = event.title, title != "Rabble Games" {
+      return title
+    }
     let leaders = event.leaders
     let leadersString = leaders.map(\.name).humanReadableList()
     return "Rabble with \(leadersString)"
@@ -48,6 +51,12 @@ struct EventDetails: View {
             }
           }
           VStack(alignment: .leading, spacing: 4) {
+            if let title = event.title, title != "Rabble Games" {
+              HStack(alignment: .firstTextBaseline) {
+                Image(systemName: "star.circle")
+                Text(title).font(.headline)
+              }.foregroundColor(.accentColor)
+            }
             HStack(alignment: .firstTextBaseline) {
               Image(systemName: "newspaper.circle")
               Text(weekday).font(.headline)
