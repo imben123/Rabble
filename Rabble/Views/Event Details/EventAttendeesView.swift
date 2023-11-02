@@ -11,7 +11,6 @@ struct EventAttendeesView: View {
   let attendees: [Attendee]
   let totalAttendees: Int
 
-
   private var attendeesAndPlaceholder: [AttendeeOrPlaceholder] {
     var result: [AttendeeOrPlaceholder] = attendees.map { .attendee($0) }
     if attendees.count < totalAttendees {

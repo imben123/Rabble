@@ -47,6 +47,10 @@ struct Event: Model {
   var leaders: [Attendee] {
     attendees.filter(\.isLeader)
   }
+
+  var correctedAttendees: Int {
+    return max(numberOfAttendees, attendees.count)
+  }
 }
 
 extension Event {

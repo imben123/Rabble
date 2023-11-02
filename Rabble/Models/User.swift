@@ -31,7 +31,7 @@ struct User: Model {
     guard let imageID = imageID, imageID != "" else {
       return nil
     }
-    return URL(string: "https://makesweat.com/userfiles/filethumbs/\(imageID)_64.jpg")
+    return URL(string: "https://makesweat.com/userfiles/filethumbs/\(imageID)_256.jpg")
   }
 
   init(raw: UserRaw) {

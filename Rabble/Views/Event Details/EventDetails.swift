@@ -73,7 +73,7 @@ struct EventDetails: View {
 
         Divider().padding(.vertical, 4)
 
-        EventAttendeesView(attendees: event.attendees, totalAttendees: event.numberOfAttendees)
+        EventAttendeesView(attendees: event.attendees, totalAttendees: event.correctedAttendees)
 
         Divider().padding(.vertical, 4)
 
