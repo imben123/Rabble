@@ -19,7 +19,7 @@ final class AccountsController: ObservableObject {
     }
   }
 
-  func login(email: String, password: String) async throws {
+  func login(email: String, password: String) async throws -> User {
     let api = RabbleAPI()
     let userRaw = try await api.login(email: email, password: password)
     let user = User(raw: userRaw)
@@ -30,5 +30,10 @@ final class AccountsController: ObservableObject {
         users.append(user)
       }
     }
+    return user
+  }
+
+  func logout(user: User) {
+    users.removeAll(where: { $0.id == user.id })
   }
 }

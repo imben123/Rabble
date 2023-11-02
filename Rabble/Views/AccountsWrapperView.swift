@@ -12,6 +12,16 @@ struct AccountsWrapperView: View {
   @EnvironmentObject private var accountsController: AccountsController
   @State private var currentAccount: User?
   @State private var showLogin = false
+  @State private var showAccount = false
+
+  var showLoginOrAccount: Binding<Bool> {
+    Binding(get: { showLogin || showAccount }, set: { newValue in
+      if newValue == false {
+        showLogin = false
+        showAccount = false
+      }
+    })
+  }
 
   var currentUserOrFirst: User? {
     if let currentAccount {
@@ -37,12 +47,19 @@ struct AccountsWrapperView: View {
         .navBarTitleDisplayMode(.inline)
         .toolbar {
           RabbleToolbarContent(currentAccount: $currentAccount,
-                               showLogin: { showLogin = true })
+                               showLogin: { showLogin = true },
+                               showAccount: { showAccount = true })
         }
         .environmentObject(repository)
     }
-    .sheet(isPresented: $showLogin, content: {
-      LoginView()
+    .sheet(isPresented: showLoginOrAccount, content: {
+      if showLogin {
+        LoginView()
+      } else {
+        AccountView(user: currentUserOrFirst!, switchUser: { user in
+          currentAccount = user
+        })
+      }
     })
   }
 }
@@ -50,6 +67,7 @@ struct AccountsWrapperView: View {
 struct RabbleToolbarContent: ToolbarContent {
   @Binding var currentAccount: User?
   let showLogin: () -> Void
+  let showAccount: () -> Void
   @EnvironmentObject private var accountsController: AccountsController
 
   var currentUserOrFirst: User? {
@@ -65,7 +83,7 @@ struct RabbleToolbarContent: ToolbarContent {
   }
 
   var body: some ToolbarContent {
-    if let currentUserOrFirst {
+    if let currentUserOrFirst, accountsController.users.count > 1 {
       ToolbarItem(placement: .placementForUserSwitcher) {
         Menu(content: {
           ForEach(accountsController.users, id: \.id) { user in
@@ -81,8 +99,20 @@ struct RabbleToolbarContent: ToolbarContent {
     ToolbarItem(placement: .principal) {
       Text("Rabble")
     }
-    ToolbarItem(placement: .placementForLogin) {
-      Button(loginText, action: { showLogin() })
+    if let currentUserOrFirst {
+      ToolbarItem(placement: .placementForLogin) {
+        Button(action: { showAccount() }, label: {
+          if accountsController.users.count > 1 {
+            Image(systemName: "gear")
+          } else {
+            UserIcon(user: currentUserOrFirst, size: 35)
+          }
+        })
+      }
+    } else {
+      ToolbarItem(placement: .placementForLogin) {
+        Button("Login", action: { showLogin() })
+      }
     }
   }
 }

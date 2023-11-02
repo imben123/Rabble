@@ -35,6 +35,7 @@
 		B55963862AD9617300E611DA /* MapLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55963852AD9617300E611DA /* MapLauncher.swift */; };
 		B58504B42ADEEE2700D694A5 /* EventEnrolmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */; };
 		B5CDD0D62AF429E600AABFAC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDD0D52AF429E600AABFAC /* LoginView.swift */; };
+		B5CDD0D82AF4416800AABFAC /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDD0D72AF4416800AABFAC /* AccountView.swift */; };
 		B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DD2AD58F6300A76900 /* RabbleApp.swift */; };
 		B5F486E02AD58F6300A76900 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F486DF2AD58F6300A76900 /* ContentView.swift */; };
 		B5F486E22AD58F6500A76900 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5F486E12AD58F6500A76900 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		B55963872AD965B900E611DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B58504B32ADEEE2700D694A5 /* EventEnrolmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEnrolmentView.swift; sourceTree = "<group>"; };
 		B5CDD0D52AF429E600AABFAC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B5CDD0D72AF4416800AABFAC /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		B5F486DA2AD58F6300A76900 /* Rabble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rabble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F486DD2AD58F6300A76900 /* RabbleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RabbleApp.swift; sourceTree = "<group>"; };
 		B5F486DF2AD58F6300A76900 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				B5CDD0D52AF429E600AABFAC /* LoginView.swift */,
 				B54B3C4B2ADD98E100681F95 /* Event Details */,
 				B54B3C482ADD98A900681F95 /* Helper Views */,
+				B5CDD0D72AF4416800AABFAC /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				B5F486DE2AD58F6300A76900 /* RabbleApp.swift in Sources */,
 				B54B3C4A2ADD98CD00681F95 /* Timestamp+UpdatedAt.swift in Sources */,
 				B5F6FE442AD5A05800043BB0 /* ExampleData.swift in Sources */,
+				B5CDD0D82AF4416800AABFAC /* AccountView.swift in Sources */,
 				B55963782AD8456D00E611DA /* LoadEventsView.swift in Sources */,
 				B54B3C512ADD9A9E00681F95 /* EventAttendeesView.swift in Sources */,
 				B55963822AD866B400E611DA /* UserIcon.swift in Sources */,

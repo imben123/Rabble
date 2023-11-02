@@ -16,6 +16,7 @@ struct LoginView: View {
   @State private var errorMessage: String?
   @State private var loading = false
 
+  var onComplete: ((User) -> Void)?
 
   private var canLogIn: Bool {
     return !loading && isValidEmail(email) && password.count >= 2
@@ -74,8 +75,9 @@ struct LoginView: View {
     loading = true
     Task {
       do {
-        try await AccountsController.shared.login(email: self.email, password: self.password)
+        let user = try await AccountsController.shared.login(email: self.email, password: self.password)
         dismiss()
+        onComplete?(user)
       } catch let error {
         errorMessage = error.localizedDescription
       }

@@ -27,6 +27,14 @@ struct User: Model {
   let stripeCustomerID: String?
   let userToken: String
 
+  var fullName: String {
+    if let lastName {
+      return "\(firstName) \(lastName)"
+    } else {
+      return firstName
+    }
+  }
+
   var imageURL: URL? {
     guard let imageID = imageID, imageID != "" else {
       return nil
