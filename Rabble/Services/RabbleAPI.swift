@@ -43,7 +43,7 @@ final class RabbleAPI {
       "end": toDate
     ])
     let events = rawEvents.compactMap { try? Event(raw: $0) }
-    return events
+    return events.sortedInAscendingOrder(by: \.startTimestamp.date)
   }
 
   func getEventPasses(event: Event) async throws -> EventPasses {
